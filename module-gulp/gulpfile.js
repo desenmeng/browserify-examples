@@ -16,4 +16,7 @@ gulp.task('browserify', function() {
         // Start piping stream to tasks!
         .pipe(gulp.dest('./'));
 });
-gulp.task('default', ['browserify']);
+gulp.task('watch', function(){
+    gulp.watch('./click.js',['browserify'])
+});
+gulp.task('default', ['browserify','watch']);
